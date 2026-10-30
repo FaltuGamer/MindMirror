@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMirror | MCA Minor Project</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <main class="shell">
+      <header>
+        <div class="brand">
+          <div class="logo">🪞</div>
+          <div>
+            <h1>MindMirror</h1>
+            <p>Understand your inner world.</p>
+          </div>
+        </div>
+        <button class="icon-btn" id="clearBtn" title="Clear saved reflections">↺</button>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h2>How are you feeling today?</h2>
+          <p>A quiet place to check in with yourself, notice patterns, and turn a few honest minutes into meaningful reflection.</p>
+        </div>
+        <div class="date-pill" id="today"></div>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h3>Daily Check-In</h3>
+          <p class="sub">Choose the feeling that fits best.</p>
+
+          <div class="moods" id="moods"></div>
+
+          <label>Energy level</label>
+          <div class="range-row">
+            <input id="energy" type="range" min="0" max="100" value="70">
+            <div class="energy-value" id="energyValue">70%</div>
+          </div>
+
+          <label>What's affecting you?</label>
+          <div class="reasons" id="reasons"></div>
+
+          <label for="thoughts">Your thoughts</label>
+          <textarea id="thoughts" placeholder="Write anything you want to remember about today..."></textarea>
+
+          <button class="primary" id="saveBtn">Save Today's Reflection</button>
+        </section>
+
+        <section class="card">
+          <h3>Your Mirror</h3>
+          <p class="sub">A small snapshot of your recent inner weather.</p>
+
+          <div class="stats">
+            <div class="stat"><small>Entries</small><b id="entries">0</b></div>
+            <div class="stat"><small>Avg. energy</small><b id="avgEnergy">—</b></div>
+            <div class="stat"><small>Top mood</small><b id="topMood">—</b></div>
+            <div class="stat"><small>Check-in streak</small><b id="streak">0 🔥</b></div>
+          </div>
+
+          <div class="mirror">
+            <strong>🪞 Mirror Mode</strong>
+            <p id="insight">Save your first reflection and MindMirror will create a gentle insight from your recent entries.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="card full">
+        <h3>7-Day Mood Rhythm</h3>
+        <p class="sub">Your recent energy pattern at a glance.</p>
+        <div class="chart-wrap">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="legend">
+          <span>Low energy</span>
+          <span>Energy trend</span>
+          <span>High energy</span>
+        </div>
+      </section>
+
+      <section class="card full">
+        <h3>Reflection Diary</h3>
+        <p class="sub">Your saved thoughts stay in this browser using LocalStorage.</p>
+        <div class="diary-list" id="diary"></div>
+      </section>
+
+      <footer>•MindMirror • MCA Minor Project • Rahul Maurya • 26MCA20009 • Group- A</footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
